@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<form novalidate method="post">
+
+
+
+{{ govukCharacterCount({
+  name: "[style]",
+  id: "[style]",
+  label: {
+    text: "Which style of music do you play?",
+    isPageHeading: true,
+    classes: "govuk-label--xl"
+  },
+  maxlength: 200,
+  value: data.musical-style
+}) }}
+
+
+
+   
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+</form>
+
+  
+   
+   
+
+
+  
+  
+  </div>
+</div>
+
+{% endblock %}

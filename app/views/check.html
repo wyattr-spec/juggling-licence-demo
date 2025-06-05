@@ -1,0 +1,163 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Check your answers</h1>
+      <div id="" class="govuk-hint">
+   
+      </div>
+
+<form novalidate method="post">
+  
+    {{ govukSummaryList({
+        rows: [
+            {
+                key: {
+                    text: "Your email address"
+                },
+                value: {
+                    html: "data.emailAddress"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "/email-address",
+                            text: "Change",
+                            visuallyHiddenText: "Your email address"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Your name"
+                },
+                value: {
+                    html: data.firstName + ' ' + data.lastName
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "/name",
+                            text: "Change",
+                            visuallyHiddenText: "Your name"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Your country"
+                },
+                value: {
+                    html: "data.country"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "/country",
+                            text: "Change",
+                            visuallyHiddenText: "Your country"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Can you play a musical instrument without making people wince?"
+                },
+                value: {
+                    html: "data.musicalInstruments"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "/musical-instruments",
+                            text: "Change",
+                            visuallyHiddenText: "Can you play a musical instrument without making people wince?"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Do you own an old hat?"
+                },
+                value: {
+                    html: "data.oldHat"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "/old-hat",
+                            text: "Change",
+                            visuallyHiddenText: "Do you own an old hat?"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Which style of music do you play?"
+                },
+                value: {
+                    html: data.musicalStyle | nl2br
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "/musical-style",
+                            text: "Change",
+                            visuallyHiddenText: "Which style of music do you play?"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Which amplifier do you use?"
+                },
+                value: {
+                    html: "data.amps"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "/amps",
+                            text: "Change",
+                            visuallyHiddenText: "Which amplifier do you use?"
+                        }
+                    ]
+                }
+            }
+        ]
+    }) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+</form>
+
+  
+   
+   
+
+
+  
+  
+  </div>
+</div>
+
+{% endblock %}

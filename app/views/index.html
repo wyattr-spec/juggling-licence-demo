@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Apply for a busking licence" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <h1 class="govuk-heading-xl">
+      {{ pageName }}
+    </h1>
+    <div class="govuk-inset-text">
+      To apply for a busking licence you must prove that you can play a musical instrument without making people wince.
+    </div>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Start now",
+      href: "/email-address",
+      isStartButton: true
+    }) }}
+  
+  
+  </div>
+</div>
+
+{% endblock %}

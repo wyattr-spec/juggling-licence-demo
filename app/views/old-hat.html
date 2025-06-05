@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Do you own an old hat?</h1>
+    <div id="" class="govuk-hint">
+      An old hat is used to collect money and may also be worn on your head.
+    </div>
+
+    <form novalidate method="post">
+
+        {{ govukRadios({
+            idPrefix: "[musicalInstruments]",
+            name: "[musicalInstruments]",
+            fieldset: {
+                legend: {
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                }
+            },
+            value: data.musicalinstruments,
+            items: [
+            {
+                value: "Yes",
+                text: "Yes"
+            },
+                {
+                    value: "No",
+                    text: "No"
+                },
+                {
+                  value: "I own a new hat",
+                  text: "I own a new hat"
+              }
+            ]
+        }) }}
+
+
+   
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+</form>
+
+  
+   
+   
+
+
+  
+  
+  </div>
+</div>
+
+{% endblock %}

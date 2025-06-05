@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/email-address"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Your email address</h1>
+    <p>We have sent a confirmation email to {{data.emailAddress}}</p>
+    <p>If you did not receive a confirmation email check your spam folder.</p>
+    <p>Or you can <a href="/email-address">request another confirmation email.</a></p>
+
+    <form novalidate method="post">
+{{ govukInput({
+  id: "[code]",
+  name: "[code]",
+  label: {
+    text: "Confirmation code",
+    classes: govuk-label--s,
+    isPageHeading: true,
+    classes: "govuk-label--s"
+  },
+  value: data.code,
+  classes: "govuk-input--width-5"
+}) }}
+
+   
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "/name",
+  isStartButton: false
+}) }}
+
+
+</form>
+   
+   
+
+
+  
+  
+  </div>
+</div>
+
+{% endblock %}

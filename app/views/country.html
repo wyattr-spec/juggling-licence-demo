@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/code"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Your country</h1>
+  
+
+    <form novalidate method="post">
+{{ govukSelect({
+  id: "[country]",
+  name: "[country]",
+  autocomplete: "name",
+  spellcheck: false,
+  label: {
+    text: "Country",
+    classes: govuk-label--l
+  },
+  value: data.country,
+  items: [
+  {
+    value: "Ukraine",
+    text: "Ukraine"
+  },
+  {
+    value: "Ukraine",
+    text: "Ukraine"
+  }
+  ]
+}) }}
+
+
+
+   
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+</form>
+
+  
+   
+   
+
+
+  
+  
+  </div>
+</div>
+
+{% endblock %}

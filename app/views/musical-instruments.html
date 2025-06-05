@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Can you play a musical instrument without making people wince?</h1>
+  
+
+    <form novalidate method="post">
+
+{{ govukRadios({
+    idPrefix: "[musicalInstruments]",
+    name: "[musicalInstruments]",
+    fieldset: {
+        legend: {
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+        }
+    },
+    value: data.musicalinstruments,
+    items: [
+    {
+        value: "Yes",
+        text: "Yes"
+    },
+        {
+            value: "Most of the time",
+            text: "Most of the time"
+        },
+        {
+          value: "I cannot play a musical instrument without making people wince",
+          text: "I cannot play a musical instrument without making people wince"
+      }
+    ]
+}) }}
+
+
+   
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+</form>
+
+  
+   
+   
+
+
+  
+  
+  </div>
+</div>
+
+{% endblock %}
