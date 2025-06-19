@@ -17,6 +17,16 @@
       </div>
 
 <form novalidate method="post">
+
+    {% set jugglingObjects %}
+    <ul class="govuk-list" "govuk-list govuk-list--bullet">
+        {% for item in data.objects %}
+        <li>
+            List item
+        </li>
+        {% endfor %}
+    </ul>
+    {% endset %}
   
     {{ govukSummaryList({
         rows: [
@@ -42,12 +52,12 @@
                     text: "Your name"
                 },
                 value: {
-                    html: data.firstName + ' ' + data.lastName
+                    html: data.fullName
                 },
                 actions: {
                     items: [
                         {
-                            href: "/name",
+                            href: "/name?returnUrl=/check",
                             text: "Change",
                             visuallyHiddenText: "Your name"
                         }
@@ -144,7 +154,7 @@
 
 
 {{ govukButton({
-  text: "Continue"
+  text: "Submit"
 }) }}
 
 

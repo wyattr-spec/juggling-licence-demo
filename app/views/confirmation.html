@@ -1,0 +1,20 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+      {{ govukPanel({
+        titleText: "You have applied for a busking licence. Your registration number is "
+      }) }}
+  
+      <p>We have sent you a confirmation email.</p>
+</div>
+</div>
+{% endblock %}
+

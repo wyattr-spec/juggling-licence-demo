@@ -16,7 +16,11 @@ router.post('/code', (req, res) => {
 })
 
 router.post('/name', (req, res) => {
+    if(req.query.returnUrl) {
+        res.redirect(req.query.returnUrl)
+    } else {
     res.redirect('/country')
+    }
 })
 
 router.post('/country', (req, res) => {
@@ -47,4 +51,8 @@ router.post('/musical-style', (req, res) => {
 
 router.post('/amps', (req, res) => {
     res.redirect('/check')
+})
+
+router.post('/check', (req, res) => {
+    res.redirect('/confirmation')
 })
