@@ -1,11 +1,10 @@
 {% extends "layouts/main.html" %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+
 {% endblock %}
+
+{% block content %}
 
 <div class="moj-filter" data-module="moj-filter">
 
@@ -163,4 +162,4 @@
   </div>
 
 
-
+  {% endblock %}
